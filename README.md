@@ -1,6 +1,7 @@
 # Site for the Mood
 
-[TODO. There will be project description]
+Сайт располагается по адресу [https://mamedovvms.github.io/20_mood/].
+Скрипт на js выбирает случайную фразу из заданного списка и показывает пользователю. 
 
 # Project Goals
 
