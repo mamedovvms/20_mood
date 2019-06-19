@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+  <meta charset="UTF-8">
   <title>Настроение</title>
+  <link href="static/css/index.css" rel="stylesheet">
   <script id="quotes_json" type="application/json">
     [
       {
@@ -12,7 +14,7 @@
         "phrase": "Собираюсь жить вечно, пока всё идёт нормально"
       },
       {
-        "phrase": "Вывеска над кафе — '\u003cМы открылись\u003e'. Что-то не так. Где же '\u003c/Мы открылись\u003e'?"
+        "phrase": "Вывеска над кафе — '\u003cМы открылись\u003e'. Что-то не так. Где же '\u003cМы открылись\u003e'?"
       },
       {
         "phrase": "Если ты будешь усердно работать по 8 часов в день, то обязательно станешь боссом и начнешь работать по 12"
@@ -21,5 +23,37 @@
   </script>
 </head>
 <body>
+  <div id="header">
+    <img src="static/images/header.png"/>
+  </div>
+  <div id="content">
+    <div id="greeting">
+      Здравствуйте.<br>Мы рады приветствовать Вас на нашем сайте хорошего настроения.
+    </div>
+
+    <div id="billboard">
+      <div id="phrase">
+      </div>
+      <div id="signature">
+      </div>
+    </div>
+
+  </div>
+  <script>
+    function fill_block(key, value){
+      block = document.getElementById(key)
+      block.innerHTML = value
+    }
+
+    json_data = document.getElementById('quotes_json').innerHTML
+    list_quotes = JSON.parse(json_data)
+    randomIndex = Math.floor(Math.random() * list_quotes.length)
+
+    quote = list_quotes[randomIndex]
+    for (key in quote){
+      fill_block(key, quote[key])
+    }
+
+  </script>
 </body>
 </html>
